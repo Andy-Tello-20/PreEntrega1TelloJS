@@ -1,5 +1,5 @@
 function confirmarAccion() {
-    let respuesta = confirm("Bienvenido al simulador de contabilidad\nDesea continuar?");
+    let respuesta = confirm("Bienvenido al simulador de contabilidad\nDesea continuar?")
 
     if (respuesta) {
         let continuar=true
@@ -12,13 +12,13 @@ function confirmarAccion() {
         
             //En este bucle (si "vt" no es un numero y los intentos son >=1) seguira ejecutandose a menos de que los intentos == 0, si "vt" es un numero e "intentos" >=1, el bucle se termina
             while (true) {
-                vt = parseInt(prompt("Comencemos!\nIndique las ventas totales: "));
+                vt = parseInt(prompt("Comencemos!\nIndique las ventas totales: "))
                 if (isNaN(vt) && intentos >= 1) {
-                intentos -= 1;
+                intentos -= 1
                 console.log(intentos)
-                alert(`No es un número\nLe quedan ${intentos} intentos`);
+                alert(`No es un número\nLe quedan ${intentos} intentos`)
                 } else {
-                break;
+                break
                 }
                 
                 if(intentos==0){
@@ -56,7 +56,7 @@ function confirmarAccion() {
 
                     //do-while controla que "gb" sea un numero y los intentos >1 .se termina el bucle cambiando valor=false
                     do {
-                        gb = parseInt(prompt("Comencemos!\nIndique la Ganancia bruta: "));
+                        gb = parseInt(prompt("Comencemos!\nIndique la Ganancia bruta: "))
                         if (isNaN(gb) && intentos > 1) {
                             intentos -= 1
                             alert(`No es un número\nLe quedan ${intentos} intentos`)
@@ -85,7 +85,7 @@ function confirmarAccion() {
 
                     //do-while controla que "interes" sea un numero y los intentos >1 .se termina el bucle cambiando valor=false
                     do {
-                        interes = parseInt(prompt("Indique el porcentaje de interes: "));
+                        interes = parseInt(prompt("Indique el porcentaje de interes: "))
                         if (isNaN(interes) && intentos > 1) {
                             intentos -= 1
                             alert(`No es un número\nLe quedan ${intentos} intentos`)
@@ -129,7 +129,7 @@ function confirmarAccion() {
                 case "si":
                     break
                 case "no":
-                  continuar=false;
+                  continuar=false
                   alert("Hasta pronto!!")
                   break
                 default:
@@ -144,8 +144,8 @@ function confirmarAccion() {
         
 
     } else {
-        alert("Acción cancelada.")
+        document.write("Acción cancelada.")
     }
 }
 
-confirmarAccion();
+confirmarAccion()
