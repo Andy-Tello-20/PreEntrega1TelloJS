@@ -1,5 +1,11 @@
 function confirmarAccion() {
     let respuesta = confirm("Bienvenido al simulador de contabilidad\nDesea continuar?")
+    function mensajeError(intentos){
+        intentos -= 1
+        alert(`No es un número\nLe quedan ${intentos} intentos`)
+        valor = true
+        return intentos
+    }
 
     if (respuesta) {
         let continuar = true
@@ -14,9 +20,7 @@ function confirmarAccion() {
             while (true) {
                 ventasTotales = parseInt(prompt("Comencemos!\nIndique las ventas totales: "))
                 if (isNaN(ventasTotales) && intentos >= 1) {
-                    intentos -= 1
-                    console.log(intentos)
-                    alert(`No es un número\nLe quedan ${intentos} intentos`)
+                    intentos = mensajeError(intentos);
                 } else {
                     break
                 }
@@ -58,9 +62,7 @@ function confirmarAccion() {
                     do {
                         gananciaBruta = parseInt(prompt("Comencemos!\nIndique la Ganancia bruta: "))
                         if (isNaN(gananciaBruta) && intentos > 1) {
-                            intentos -= 1
-                            alert(`No es un número\nLe quedan ${intentos} intentos`)
-                            valor = true
+                            intentos = mensajeError(intentos);
 
                         } else {
                             valor = false
@@ -75,7 +77,7 @@ function confirmarAccion() {
                         alert(`Porcentaje de ganancia= ${porcentaje.toFixed(2)}%`)
 
                         let costoDeVenta = ventasTotales - gananciaBruta
-                        alert(`El costo de venta es $ ${costoDeVenta}`)
+                        alert(`El costo de venta es $${costoDeVenta}, este monto puede ser reinvertido`)
                     }
 
 
@@ -87,9 +89,7 @@ function confirmarAccion() {
                     do {
                         interes = parseInt(prompt("Indique el porcentaje de interes: "))
                         if (isNaN(interes) && intentos > 1) {
-                            intentos -= 1
-                            alert(`No es un número\nLe quedan ${intentos} intentos`)
-                            valor = true
+                            intentos = mensajeError(intentos);
 
                         } else {
                             valor = false
@@ -105,7 +105,7 @@ function confirmarAccion() {
                         alert(`Ganancia Bruta= $${gananciaBruta}`)
 
                         let costoDeVenta = ventasTotales - gananciaBruta
-                        alert(`El costo de venta es $${costoDeVenta}`)
+                        alert(`El costo de venta es $${costoDeVenta}, este monto puede ser reinvertido`)
                     }
 
 
